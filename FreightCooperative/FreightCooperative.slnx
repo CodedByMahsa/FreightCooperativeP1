@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../FreightCooperative.Domain/FreightCooperative.Domain.csproj" />
+  <Project Path="FreightCooperative.csproj" />
+</Solution>

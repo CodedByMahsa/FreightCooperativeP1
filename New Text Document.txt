@@ -1,0 +1,107 @@
+City (table):
+
+CityId(PK)
+CityName
+
+
+
+Warehouse (table):
+
+WarehouseId(PK)
+WarehouseName
+CityId(FK) = City.CityId
+WarehousePhone
+WarehouseAddress
+
+
+
+Customer (table):
+
+CustomerId(PK)
+Fullname = (FirstName+LastName)
+Phone
+
+
+
+Driver (table):
+
+DriverId(PK)
+Fullname = (FirstName+LastName)
+phone
+VeichleInfo(optional)
+
+
+
+Item (table):
+
+ItemId(PK)
+ItemName
+ItemUnit
+
+
+
+ShipmentItem(bridge-table):
+
+ShipmentId(PK,FK)
+ItemId(PK,FK)
+Quantity
+ItemValue
+
+
+
+Shipment (table):
+
+ShipmentId(PK)
+ShipmentType:Sent,Delivered
+SenderCustomerId (FK) = Customer.CustomerId(nullable)
+SenderFullname
+SenderPhone
+SenderCityId(FK) = City.CityId
+SenderWarehouseId(Fk) = Warehouse.WarehouseId
+
+ReceiverCustomerId(FK) = Customer.CustomerId(nullable)
+ReceiverFullname
+ReceiverPhone
+ReceiverCityId(FK) = City.CityId
+ReceiverWarehouseId(FK) = Warehouse.WarehouseId
+
+DriverId(FK) = Driver.DriverId
+
+Status:
+In-Warehouse
+Delievered
+Issued-at
+created-at(optional)
+
+
+PrepaidCost
+CodCost
+ShippingCost
+PackingCost
+InsuranceCost
+OtherCost
+TotalCost
+
+DestinationDescription(Optional)
+
+
+Relationships:
+City 1 --- n Shipment [sender-city-id]
+
+City 1 --- n Shipment [receiver-city-id]
+
+Warehouse 1 --- n Customer 
+
+Warehouse 1 --- n Shipment [sender-warehouse-id]
+
+Warehouse 1 --- n Shipment 
+
+Customer 1 --- n Shipment [sender-customer-id]
+
+Customer 1 --- n Shipment [receiver-city-id]
+
+Driver 1 --- n Shipment 
+
+Item 1 --- n ShipmentItem 
+
+Shipment n --- m item

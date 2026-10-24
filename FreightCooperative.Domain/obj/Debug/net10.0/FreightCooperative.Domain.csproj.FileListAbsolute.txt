@@ -1,0 +1,4 @@
+E:\c#\FreightCooperative\FreightCooperative.Domain\obj\Debug\net10.0\FreightCooperative.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\c#\FreightCooperative\FreightCooperative.Domain\obj\Debug\net10.0\FreightCooperative.Domain.AssemblyInfoInputs.cache
+E:\c#\FreightCooperative\FreightCooperative.Domain\obj\Debug\net10.0\FreightCooperative.Domain.AssemblyInfo.cs
+E:\c#\FreightCooperative\FreightCooperative.Domain\obj\Debug\net10.0\FreightCooperative.Domain.csproj.CoreCompileInputs.cache
